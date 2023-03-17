@@ -1,6 +1,6 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+from words import *
+
 
 class Game:
    """
@@ -24,20 +24,55 @@ def preparation():
     """
     Loading highscore data from CSV and displays a welcome message
     """
-    print("\nWelcome to Words The Chemist\n\nCategory \n1 - Chemical elements - names\n2 - Chemical elements - symbols\n")
+    print("Welcome to Words The Chemist")
 
 def category_input():
     """
-    Ask user to choose from 2 categories and returns a list of 10 words from the category choosen.
+    Asks the user to input a category number and checks if the data is valid
     """
-    category = input("Enter your category number here:\n")
-    return category
+    while True:
+        print("_______________________________________________________________________________")
+        print("Chose a number from the categories below\n")
+        print("1 - Chemical elements - names")
+        print("2 - Chemical elements - symbols")
+
+        try:
+            x = int(input("\nEnter number and press enter: \n"))
+            if x <= 2 and x >= 1:
+                print("Great choice!")
+                return x
+            else:
+                print("\033[4;31m Integer must be between 1-2 \033[0;m")
+        except ValueError:
+            print('\033[4;31m Input needs to be a integer, try again! \033[0;m')
+
+
+def name_input():
+    """
+    Asks the user to input a name and checks if the data is valid
+    """
+    while True:
+        print("-------------------------------------------------------------------------------")
+        print("We do also need your name")
+        print("choose name, max 10 letters")
+
+        x = str(input('Enter name: \n'))
+        if len(x) <= 10 and len(x) >= 0:
+            print("Great choice!")
+            print("-------------------------------------------------------------------------------")
+            return x
+        else:
+            print('\033[4;31m Name must be characters with a max lenght of 10 \033[0;m')
+    
+
+def validate_integer(input):
+    """
+    Validates the data typed in by the player
+    """
 
 def start_game(word_list):
     """
     Starts the game, displays the first word from the game list passed in word_list variable.
-    Sets the score to 0.
-    sets the counter to 10.
     """
 
 
@@ -47,9 +82,9 @@ def main():
     """
     game_1 = Game('no_name', 'Chemical elements - names', 0, 10)
     game_2 = Game('no_name', 'Chemical elements - symbols', 0, 10)
-    #print(game_1.score)
     preparation()
-    category_data = category_input()
-    print(category_data)
+    game_category = category_input()
+    game_name = name_input()
+
 
 main()

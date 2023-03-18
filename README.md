@@ -1,10 +1,13 @@
 # Element guesser
 Element guesser is a word guesser game that runs on Heroku.
 
-User will have 2 categories to pick from. Each round will contain 10.
+The player will have to guess which chemical element's symbol goes with which element.
+
+**[Play the game!](https://portfolio-project-3-ci.herokuapp.com/)**
 
 
 ## How To Play
+1-
 
 
 ## Features

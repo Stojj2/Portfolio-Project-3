@@ -1,11 +1,15 @@
 from words import GAME_WORDS
 
+
 class Game:
     """
     Game class with score and username
     """
+
     def __init__(self):
-        #properties
+        """
+        Properties of the game
+        """
         self.__name__ = None
         self.__score__ = 0
 
@@ -15,25 +19,33 @@ class Game:
         """
         self.__name__ = name_input()
         for i in GAME_WORDS:
-            print("_______________________________________________________________________________")
-            print(f"What chemical element has the symbol = {i['symbol']}                            Question {GAME_WORDS.index(i) + 1}\n")
-            print(i['options'])
+            print("_________________________________________")
+            print(f"Question   Score")
+            print(f"   {GAME_WORDS.index(i) + 1}         {self.__score__}")
+            print(f"Chemical element with the symbol = {i['symbol']}")
+            option_list = i['options']
+            for x in range(len(option_list)):
+                print(option_list[x])
+
             guessed_answer = answer_input()
             if int(guessed_answer) == int(i['correct_option']):
                 self.__score__ += 1
-                print(f"\033[1;32mCorrect answer\033[0m                                                          Score {self.__score__}")
+                print(f"\033[1;32mCorrect answer\033[0m")
+                print("_________________________________________")
             else:
-                print(f"\033[1;31mIncorrect answer\033[0m                                                        Score {self.__score__}")
-                print("_______________________________________________________________________________")
-    
+                print(f"\033[1;31mIncorrect answer\033[0m")
+                print("_________________________________________")
+
     def end(self):
         print(f"Well done {self.__name__},\nYou scored {self.__score__}/5")
+
 
 def preparation():
     """
     Showing a welcome message to the user
     """
     print("\n\n\033[1mWelcome to Element guesser\033[0m")
+
 
 def name_input():
     """
@@ -43,23 +55,25 @@ def name_input():
         The return value is the name of the user
     """
     while True:
-        print("-------------------------------------------------------------------------------")
+        print("_________________________________________")
         print("Choose name, max 10 characters")
 
         x = str(input('Enter name: \n'))
         if len(x) <= 10 and len(x) >= 0:
             print("Great choice, Let's begin!")
-            print("-------------------------------------------------------------------------------")
+            print("_________________________________________")
             return x
         else:
-            print('\033[4;31m Name must be characters with a max lenght of 10 \033[0;m')
+            print('\033[4;31m Max lenght is 10 characters \033[0;m')
+
 
 def answer_input():
     """
     Asks the user to input a answer number and checks if the data is valid
 
     Returns:
-        The return value will be an integer that has been validated to be between 1-3
+        The return value will be an integer.
+        The integer have been validated to be between 1-3
     """
     while True:
         try:
@@ -67,9 +81,10 @@ def answer_input():
             if x <= 3 and x >= 1:
                 return x
             else:
-                print("\033[4;31m Integer must be between 1-3, try again! \033[0;m")
+                print("\033[4;31m Integer must be between 1-3! \033[0;m")
         except ValueError:
-            print('\033[4;31m Input needs to be a integer, try again! \033[0;m')
+            print('\033[4;31m Input needs to be a integer! \033[0;m')
+
 
 def main():
     """
@@ -79,4 +94,6 @@ def main():
     game = Game()
     game.start()
     game.end()
+
+
 main()

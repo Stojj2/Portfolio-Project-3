@@ -78,6 +78,8 @@ start behaviours is starting a game and prompt the player for a name, end behavi
     - GitPod where used for writing all code 
   - **GitHub**
     - For storing the code GitHub where used
+  - **Heruko**
+    - Heruko was use to deploy the app
   - **Mobile FIRST**
     - Mobile First Chrome extension where used for screenshots
     
@@ -90,6 +92,7 @@ This project was deployed using code institute's mock terminal for heroku.
     - Set the buildpack to **Python** and **nodeJS** in that order
     - Link the Heruko app to the repository 
     - Click **Deploy**
+    
  ### GitPod
   - The app was coded using GitPod. The steps to deploy is as following:
   - In the GitHub repository, press the green GitPod button for transfer the project to GitPod enviroment

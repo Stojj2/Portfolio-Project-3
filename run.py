@@ -1,4 +1,3 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 from words import GAME_WORDS
 
 class Game:
@@ -14,6 +13,7 @@ class Game:
         """
         Starts the game, displays the first word from the GAME_WORDS list.
         """
+        self.__name__ = name_input()
         for i in GAME_WORDS:
             print("_______________________________________________________________________________")
             print(f"What chemical element has the symbol = {i['symbol']}                            Question {GAME_WORDS.index(i) + 1}\n")
@@ -25,8 +25,9 @@ class Game:
             else:
                 print(f"\033[1;31mIncorrect answer\033[0m                                                        Score {self.__score__}")
                 print("_______________________________________________________________________________")
-        print(f"GAME OVER\nYour scored {self.__score__}/5")
-
+    
+    def end(self):
+        print(f"Well done {self.__name__},\nYou scored {self.__score__}/5")
 
 def preparation():
     """
@@ -37,14 +38,17 @@ def preparation():
 def name_input():
     """
     Asks the user to input a name and checks if the data is valid
+
+    Returns:
+        The return value is the name of the user
     """
     while True:
         print("-------------------------------------------------------------------------------")
-        print("Choose name, max 10 letters")
+        print("Choose name, max 10 characters")
 
         x = str(input('Enter name: \n'))
         if len(x) <= 10 and len(x) >= 0:
-            print("Great choice!")
+            print("Great choice, Let's begin!")
             print("-------------------------------------------------------------------------------")
             return x
         else:
@@ -53,6 +57,9 @@ def name_input():
 def answer_input():
     """
     Asks the user to input a answer number and checks if the data is valid
+
+    Returns:
+        The return value will be an integer that has been validated to be between 1-3
     """
     while True:
         try:
@@ -71,5 +78,5 @@ def main():
     preparation()
     game = Game()
     game.start()
-
+    game.end()
 main()

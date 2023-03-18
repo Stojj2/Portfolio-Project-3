@@ -59,12 +59,12 @@ def name_input():
         print("Choose name, max 10 characters")
 
         x = str(input('Enter name: \n'))
-        if len(x) <= 10 and len(x) >= 0:
+        if len(x) <= 10 and len(x) >= 1:
             print("Great choice, Let's begin!")
             print("_________________________________________")
             return x
         else:
-            print('\033[4;31m Max lenght is 10 characters \033[0;m')
+            print('\033[4;31mName need to be between 1-10 characters\033[0;m')
 
 
 def answer_input():

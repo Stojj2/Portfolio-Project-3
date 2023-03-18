@@ -1,3 +1,7 @@
+"""
+    This file contains a list of words needed for the game.
+    More words can be added and the game will still run fine.
+"""
 GAME_WORDS = [
     { 
         'symbol': "H",

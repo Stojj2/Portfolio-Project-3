@@ -27,7 +27,7 @@ The player will have to guess which chemical element's symbol that goes with whi
   - If the answer is correct the player will se a green text that says "Correct answer"
     - ![Correct](docs/correct.png)
 
-  - If the answer is correct the player will se a red text that says "Incorrect answer"
+  - If the answer is incorrect the player will se a red text that says "Incorrect answer"
     - ![Correct](docs/incorrect.png)
  
 ### Future Features
@@ -53,6 +53,7 @@ The player will have to guess which chemical element's symbol that goes with whi
 ![Lucid](docs/python_Word_game.svg)
 
 ## Data Model
+I used a class named Game for my model. T
 
 ## Testing
 

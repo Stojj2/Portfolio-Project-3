@@ -53,7 +53,11 @@ The player will have to guess which chemical element's symbol that goes with whi
 ![Lucid](docs/python_Word_game.svg)
 
 ## Data Model
-I used a class named Game for my model. T
+I created a class named "Game" for my app. The game class have properties of player's name and players score.
+
+The Game class do have two behaviours, start and end.
+start behaviours is starting a game and prompt the player for a name, end behaviour will end the game and present a final score.
+
 
 ## Testing
 
@@ -64,7 +68,21 @@ I used a class named Game for my model. T
  ### Validator testing
   - Tested with Code Institutes Python linter, no errors occurred
 
+  ### Bugs
+   - When user entered player name, data was accepted with 0 characters. 
+      - Fixed
+
+
+## Technology 
+  - **GitPod**
+    - GitPod where used for writing all code 
+  - **GitHub**
+    - For storing the code GitHub where used
+  - **Mobile FIRST**
+    - Mobile First Chrome extension where used for screenshots
+    
 ## Deployment
+### Heroku
 This project was deployed using code institute's mock terminal for heroku.
   - Steps for deployment:
     - Fork or clone this repository
@@ -72,7 +90,11 @@ This project was deployed using code institute's mock terminal for heroku.
     - Set the buildpack to **Python** and **nodeJS** in that order
     - Link the Heruko app to the repository 
     - Click **Deploy**
-
+ ### GitPod
+  - The app was coded using GitPod. The steps to deploy is as following:
+  - In the GitHub repository, press the green GitPod button for transfer the project to GitPod enviroment
+    - NOTE!
+      - [GitPod webbrowser plugin](https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki) needs to be installed to your browser to get this button.
 
 ## Credits
 - Code Institute for the deplolyment terminal

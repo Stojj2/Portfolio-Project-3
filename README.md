@@ -1,7 +1,7 @@
 # Element guesser
 Element guesser is a word guesser game that runs on Heroku.
 
-The player will have to guess which chemical element's symbol goes with which element.
+The player will have to guess which chemical element's symbol that goes with which element.
 
 **[Play the game!](https://portfolio-project-3-ci.herokuapp.com/)**
 
@@ -43,6 +43,13 @@ The player will have to guess which chemical element's symbol goes with which el
 ## Data Model
 
 ## Testing
+
+ ### Manual testing
+  - Entered invalid data to see if the program will throw an error, exceptions in the code work fine.
+  - Entered over 10 characters to see if the code will throw an error, 10 is the limit for player name. Works fine!
+ - Tested thru python terminal on gitpod and in the terminal deployed on Heroku.
+ ### Validator testing
+  - Tested with Code Institutes Python linter, no errors occurred
 
 ## Deployment
 

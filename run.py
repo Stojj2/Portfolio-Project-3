@@ -44,7 +44,7 @@ def preparation():
     """
     Showing a welcome message to the user
     """
-    print("\n\n\033[1mWelcome to Element guesser\033[0m")
+    print("\n\n\033[1mWelcome to Element Guesser\033[0m")
 
 
 def name_input():

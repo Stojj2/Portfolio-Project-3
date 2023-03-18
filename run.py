@@ -12,20 +12,18 @@ class Game:
 
     def start(self):
         """
-        Starts the game, displays the first word from the game list passed in word_list variable.
+        Starts the game, displays the first word from the GAME_WORDS list.
         """
         for i in GAME_WORDS:
             print("_______________________________________________________________________________")
-            print("Chose a option from bellow")
+            print(f"What chemical element has the symbol = {i['symbol']}                            Question {GAME_WORDS.index(i) + 1}\n")
             print(i['options'])
             guessed_answer = answer_input()
             if int(guessed_answer) == int(i['correct_option']):
-                print("you guessed right")
                 self.__score__ += 1
-                print(f"                                                                        Score {self.__score__}")
+                print(f"\033[1;32mCorrect answer\033[0m                                                          Score {self.__score__}")
             else:
-                print("wrong answer")
-                print(f"                                                                        Score {self.__score__}")
+                print(f"\033[1;31mIncorrect answer\033[0m                                                        Score {self.__score__}")
                 print("_______________________________________________________________________________")
         print(f"GAME OVER\nYour scored {self.__score__}/5")
 
@@ -34,7 +32,7 @@ def preparation():
     """
     Showing a welcome message to the user
     """
-    print("Welcome to Element guesser")
+    print("\n\n\033[1mWelcome to Element guesser\033[0m")
 
 def name_input():
     """
@@ -65,21 +63,6 @@ def answer_input():
                 print("\033[4;31m Integer must be between 1-3, try again! \033[0;m")
         except ValueError:
             print('\033[4;31m Input needs to be a integer, try again! \033[0;m')
-
-def start(self):
-    """
-    Starts the game, displays the first word from the game list passed in word_list variable.
-    """
-    for i in GAME_WORDS:
-        print(f"Chose a option from bellow")
-        print(i['options'])
-        guessed_answer = answer_input()
-
-        if int(guessed_answer) == int(i['correct_option']):
-            print("you guessed rihgt")
-            game_1.score += 1
-        else:
-            print("wrong answer")
 
 def main():
     """

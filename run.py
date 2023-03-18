@@ -1,53 +1,40 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-from words import *
-from collections import OrderedDict
-
+from words import GAME_WORDS
 
 class Game:
-   """
-   Game class
-   """
-   def __init__(self, name, category, score, counter):
-      #properties
-       self.name = name
-       self.category = category
-       self.score = score
-       self.counter = counter
+    """
+    Game class with score and username
+    """
+    def __init__(self):
+        #properties
+        self.__name__ = None
+        self.__score__ = 0
 
-   #behaviour
-   def description(self):
-       """
-       describe the game
-       """
-       return f"{self.name} scored {self.score} in game category {self.category}" 
-       
+    def start(self):
+        """
+        Starts the game, displays the first word from the game list passed in word_list variable.
+        """
+        for i in GAME_WORDS:
+            print("_______________________________________________________________________________")
+            print("Chose a option from bellow")
+            print(i['options'])
+            guessed_answer = answer_input()
+            if int(guessed_answer) == int(i['correct_option']):
+                print("you guessed right")
+                self.__score__ += 1
+                print(f"                                                                        Score {self.__score__}")
+            else:
+                print("wrong answer")
+                print(f"                                                                        Score {self.__score__}")
+                print("_______________________________________________________________________________")
+        print(f"GAME OVER\nYour scored {self.__score__}/5")
+
+
 def preparation():
     """
-    Loading highscore data from CSV and displays a welcome message
+    Showing a welcome message to the user
     """
     print("Welcome to Element guesser")
-
-
-def category_input():
-    """
-    Asks the user to input a category number and checks if the data is valid
-    """
-    while True:
-        print("_______________________________________________________________________________")
-        print("Chose a number from the categories below\n")
-        print("1 - Chemical elements - names")
-        print("2 - Chemical elements - symbols")
-
-        try:
-            x = int(input("\nEnter number and press enter: \n"))
-            if x <= 2 and x >= 1:
-                print("Great choice!")
-                return x
-            else:
-                print("\033[4;31m Integer must be between 1-2 \033[0;m")
-        except ValueError:
-            print('\033[4;31m Input needs to be a integer, try again! \033[0;m')
-
 
 def name_input():
     """
@@ -55,8 +42,7 @@ def name_input():
     """
     while True:
         print("-------------------------------------------------------------------------------")
-        print("We do also need your name")
-        print("choose name, max 10 letters")
+        print("Choose name, max 10 letters")
 
         x = str(input('Enter name: \n'))
         if len(x) <= 10 and len(x) >= 0:
@@ -66,38 +52,41 @@ def name_input():
         else:
             print('\033[4;31m Name must be characters with a max lenght of 10 \033[0;m')
 
+def answer_input():
+    """
+    Asks the user to input a answer number and checks if the data is valid
+    """
+    while True:
+        try:
+            x = int(input("\nEnter number and press enter: \n"))
+            if x <= 3 and x >= 1:
+                return x
+            else:
+                print("\033[4;31m Integer must be between 1-3, try again! \033[0;m")
+        except ValueError:
+            print('\033[4;31m Input needs to be a integer, try again! \033[0;m')
 
-def start_game(category, name):
+def start(self):
     """
     Starts the game, displays the first word from the game list passed in word_list variable.
     """
-    if category == 1:
-        print(f"Hi {name}, you will get the chemical element symbol an will have to guess what element name it has\n")
+    for i in GAME_WORDS:
+        print(f"Chose a option from bellow")
+        print(i['options'])
+        guessed_answer = answer_input()
 
-        for i in game_words:
-            game_1 = Game(name, 'Chemical elements - names', 0, 10)
-            symbol = game_words[i]['symbol']
-            options = game_words[i]['alternative_name']
-            options.append(game_words[i]['name'])
-            print(f'What name does the element symbol {symbol} has')
-            print(options)
-            input("answer:\n")
-            print("\n")
-            print(f'Your Score is {game_1.score} and you are at question {i}/{game_1.counter}')
-            print("-------------------------------------------------------------------------------")
-            
-    elif category == 2:
-        print(f"Hi {name}, you will get the chemical element name an will have to guess what symbol it has")    
-
+        if int(guessed_answer) == int(i['correct_option']):
+            print("you guessed rihgt")
+            game_1.score += 1
+        else:
+            print("wrong answer")
 
 def main():
     """
     Run all game functions
     """
     preparation()
-    game_category = category_input()
-    game_name = name_input()
-    start_game(game_category, game_name)
-
+    game = Game()
+    game.start()
 
 main()

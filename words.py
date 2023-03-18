@@ -1,57 +1,27 @@
-game_words = {
-    "hydrogen": {
-        "symbol": "H",
-        "name": "Hydrogen",
-        "alternative_symbol": ["Ge", "Hy"],
-        "alternative_name": ["Holmium", "Heliumn"]
+GAME_WORDS = [
+    {
+        'symbol': "H",
+        'options': "1. Hydrogen 2. Helium 3. Holmium",
+        'correct_option': '1'
     },
-
-    "helium": {
-        "symbol": "He",
-        "name": "Helium",
-        "alternative_symbol": ["Hm", "Um"],
-        "alternative_name": ["Holmium", "Hydrogen"]
+    {
+        'symbol': "He",
+        'options': "1. Hydrogen 2. Helium 3. Holmium",
+        'correct_option': "2"
     },
-
-    "lithium": {
-        "symbol": "Li",
-        "name": "Lithium",
-        "alternative_symbol": ["Lh", "Lt"],
-        "alternative_name": ["Lutetium", "Lead"]
+    {
+        'symbol': "Li",
+        'options': "1. Lead 2. Lithium 3. Lutetium",
+        'correct_option': "2"
     },
-
-    "magnesium": {
-        "symbol": "Mg",
-        "name": "Magnesium"
+    {
+        'symbol': "Mg",
+        'options': "1. Magnesium 2. Mercury 3. Meitnerium",
+        'correct_option': "1"
     },
-
-    "aluminium": {
-        "symbol": "Al",
-        "name": "Aluminium"
-    },
-
-    "silicon": {
-        "symbol": "Si",
-        "name": "Silicon"
-    },
-
-    "potassium": {
-        "symbol": "K",
-        "name": "Potassium"
-    },
-
-    "copper": {
-        "symbol": "Cu",
-        "name": "Copper"
-    },
-
-    "silver": {
-        "symbol": "Ag",
-        "name": "Silver"
-    },
-
-    "gold": {
-        "symbol": "Au",
-        "name": "Gold"
+    {
+        'symbol': "Al",
+        'options': "1. Argon 2. Arsenic 3. Aluminum",
+        'correct_option': "3"
     }
-}
+]

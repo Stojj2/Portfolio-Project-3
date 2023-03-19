@@ -2,7 +2,7 @@
 ![Responsive](docs/responsive.png)
 Element guesser is a word guesser game that runs on Heroku.
 
-The player will have to guess which chemical element's symbol that goes with which element.
+The player must guess which symbol corresponds to a chemical element.
 
 **[Play the game!](https://portfolio-project-3-ci.herokuapp.com/)**
 
@@ -17,7 +17,7 @@ The player will have to guess which chemical element's symbol that goes with whi
 
 ## Features
 ### Existing Features
-  - Allow player to input a player name of maximun 10 characters
+  - Allow player to input a player name of maximum 10 characters
 
   - Checks the data that has been entered for the answer options, will only allow integers from 1-3
 
@@ -26,7 +26,7 @@ The player will have to guess which chemical element's symbol that goes with whi
   - If the answer is incorrect the player will se a red text that says "Incorrect answer"
  
 ### Future Features
- - Highscore system that will save the highscore result in a file
+ - High score system that will save the high score result in a file
  - More categories to choose from
 
 
@@ -45,7 +45,7 @@ The Game class do have two behaviours, start and end.
 ## Testing
 <br><br>
   - **`Enter no name`** 
-    - Press enter when the question for name apear
+    - Press enter when the question for name appear
     - The terminal is showing an error message "Name need to be between 1-10 characters"
 
     <img src="docs/no_name.png" alt="desktop wireframe" width="300"/>
@@ -53,7 +53,7 @@ The Game class do have two behaviours, start and end.
      **Test Passed** ✓
 <br><br>
   - **`Enter to long name`**
-      - Input more than 10 characters when the question for name apear
+      - Input more than 10 characters when the question for name appear
       - The terminal is showing an error message "Name need to be between 1-10 characters"
 
       <img src="docs/long_name.png" alt="desktop wireframe" width="300"/>
@@ -88,6 +88,11 @@ The Game class do have two behaviours, start and end.
 
  ### Validator testing
   - Tested with Code Institutes Python linter, no errors occurred
+  
+  <img src="docs/ci-linter.png" alt="desktop wireframe" width="500"/>
+
+   **Test Passed** ✓
+
 
   ### Bugs
    - When user entered player name, data was accepted with 0 characters. 
